@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_alcoholic"
+        android:icon="@drawable/ic_alcoholic"
+        android:title="@string/alco_licos" />
+
+    <item
+        android:id="@+id/navigation_random"
+        android:icon="@drawable/ic_random"
+        android:title="@string/aleat_rios" />
+    <item
+        android:id="@+id/navigation_alfabetic"
+        android:icon="@drawable/ic_alfabetic"
+        android:title="@string/alfab_tico" />
+
+</menu>
