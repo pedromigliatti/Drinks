@@ -12,7 +12,7 @@
         android:title="@string/aleat_rios" />
     <item
         android:id="@+id/navigation_alfabetic"
-        android:icon="@drawable/ic_alfabetic"
-        android:title="@string/alfab_tico" />
+        android:icon="@drawable/ic_non_alcoholic"
+        android:title="@string/n_o_alco_lico" />
 
 </menu>

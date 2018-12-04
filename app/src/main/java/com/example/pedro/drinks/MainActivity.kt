@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity(), MainContract.View  {
 
     val presenter : MainContract.Presenter = MainPresenter(this)
 
+    var indexDrinkClicado: Int = -1
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,38 +33,6 @@ class MainActivity : AppCompatActivity(), MainContract.View  {
         presenter.onLoadList(0)
 
         bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-//
-//        val d1 = Drink("13060",
-//                "Margarita",
-//                null,
-//                "Ordinary Drink",
-//                "Contemporary Classics",
-//                "Alcoholic",
-//                "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
-//                "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg")
-//
-//        val d2 = Drink("13060",
-//                "Margarita",
-//                null,
-//                "Ordinary Drink",
-//                "Contemporary Classics",
-//                "Alcoholic",
-//                "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
-//                "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg")
-//
-//        val d3 = Drink("13060",
-//                "Margarita",
-//                null,
-//                "Ordinary Drink",
-//                "Contemporary Classics",
-//                "Alcoholic",
-//                "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.",
-//                "https://www.thecocktaildb.com/images/media/drink/wpxpvu1439905379.jpg")
-//
-//
-//        val testList = listOf(d1, d2, d3)
-//
-//        showList(testList)
     }
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -86,10 +57,11 @@ class MainActivity : AppCompatActivity(), MainContract.View  {
     override fun showList(list: List<Drink>) {
 
         val adapter = DrinkAdapter(this, list)
-        adapter.setOnItemClickListener {position ->
-            val openBrowser = Intent(Intent.ACTION_VIEW)
-            openBrowser.data = Uri.parse(list.get(position).strDrinkThumb)
-            startActivity(openBrowser)
+        adapter.setOnItemClickListener {drink, indexDrinkClicado ->
+            this.indexDrinkClicado = indexDrinkClicado
+            val detalheDrink = Intent(this, DrinkActivity::class.java)
+            detalheDrink.putExtra("Drink", drink)
+            this.startActivityForResult(detalheDrink, 1)
         }
 
         rvDrinks?.setHasFixedSize(true)
@@ -107,6 +79,14 @@ class MainActivity : AppCompatActivity(), MainContract.View  {
 
     override fun showLoading() {
         pbLoading.visibility = ProgressBar.VISIBLE
+    }
+
+    override fun hideRv(){
+        rvDrinks.visibility = ProgressBar.INVISIBLE
+    }
+
+    override fun showRv(){
+        rvDrinks.visibility = ProgressBar.VISIBLE
     }
 
     override fun hideLoading() {

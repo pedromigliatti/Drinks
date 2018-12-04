@@ -8,6 +8,7 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
 
     override fun onLoadList(type: Int) {
 
+        view.hideRv()
         view.showLoading()
 
         val drinkService = RetrofitInicializer().createDrinksService()
@@ -29,6 +30,7 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
             override fun onResponse(call: Call<DrinkList>, response: Response<DrinkList>) {
                 view.hideLoading()
                 if (response.body() != null) {
+                    view.showRv()
                     view.showList(response.body()!!.drinks)
                 } else {
                     view.showMessage("Sem notícias para hoje")

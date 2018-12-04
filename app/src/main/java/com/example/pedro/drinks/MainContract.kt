@@ -7,6 +7,8 @@ interface MainContract {
         fun showList(articles: List<Drink>)
         fun showLoading()
         fun hideLoading()
+        fun showRv()
+        fun hideRv()
     }
 
     interface Presenter {

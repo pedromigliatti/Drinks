@@ -11,9 +11,9 @@ import kotlinx.android.synthetic.main.drink_item.view.*
 class DrinkAdapter(val context: Context, val drinks: List<Drink>)
     : RecyclerView.Adapter<DrinkAdapter.ViewHolder>() {
 
-    var itemClickListener: ((index: Int) -> Unit)? = null
+    var itemClickListener: ((drink: Drink, index: Int) -> Unit)? = null
 
-    fun setOnItemClickListener(clique: ((index: Int) -> Unit)){
+    fun setOnItemClickListener(clique: ((drink: Drink, index: Int) -> Unit)){
         this.itemClickListener = clique
     }
 
@@ -32,7 +32,7 @@ class DrinkAdapter(val context: Context, val drinks: List<Drink>)
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindView(context: Context, drink: Drink, itemClickListener: ((index: Int) -> Unit)?) {
+        fun bindView(context: Context, drink: Drink, itemClickListener: ((drink: Drink, index: Int) -> Unit)?) {
             itemView.tvTitle.text = drink.strDrink
 
             GlideApp.with(context)
@@ -43,7 +43,7 @@ class DrinkAdapter(val context: Context, val drinks: List<Drink>)
 
             if(itemClickListener != null) {
                 itemView.setOnClickListener {
-                    itemClickListener.invoke(adapterPosition)
+                    itemClickListener.invoke(drink, adapterPosition)
                 }
             }
 

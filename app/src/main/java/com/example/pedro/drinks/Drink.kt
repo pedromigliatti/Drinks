@@ -1,5 +1,7 @@
 package com.example.pedro.drinks
 
+import java.io.Serializable
+
 data class Drink(
         val idDrink: String,
         val strDrink: String,
@@ -9,4 +11,4 @@ data class Drink(
         val strAlcoholic: String,
         val strInstructions: String,
         val strDrinkThumb: String
-)
+) : Serializable
