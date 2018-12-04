@@ -1,18 +1,18 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.scenarios_main
 
 import android.content.Intent
-import android.net.Uri
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.ActionBar
 import android.support.v7.widget.GridLayoutManager
-import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.pedro.drinks.R
+import com.example.pedro.drinks.entities.Drink
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainContract.View  {
+class MainActivity : AppCompatActivity(), MainContract.View {
 
     private var navigationView: BottomNavigationView? = null
 
@@ -68,9 +68,6 @@ class MainActivity : AppCompatActivity(), MainContract.View  {
         rvDrinks.adapter = adapter
 
         rvDrinks?.layoutManager = GridLayoutManager(this, 2)
-
-        rvDrinks?.addItemDecoration(RecyclerFormatter.ItemSpacing(this, R.dimen.spacing))
-
     }
 
     override fun showMessage(msg: String) {

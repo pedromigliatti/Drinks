@@ -1,4 +1,4 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

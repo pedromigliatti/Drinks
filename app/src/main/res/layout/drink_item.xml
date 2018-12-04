@@ -4,13 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:optRoundCardElevation="1dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.example.pedro.drinks.SquareLayout
+        <com.example.pedro.drinks.utils.SquareLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/main_square">
@@ -20,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
-        </com.example.pedro.drinks.SquareLayout>
+        </com.example.pedro.drinks.utils.SquareLayout>
 
         <TextView
             android:id="@+id/tvTitle"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:layout_marginTop="5dp"
+            android:textStyle="bold"
             android:layout_marginLeft="5dp"
             android:layout_below="@id/main_square"
             android:textColor="@color/colorPrimaryDark"

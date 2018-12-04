@@ -1,8 +1,10 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.utils
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.RelativeLayout
+
+//Código retirado do repositório https://github.com/tirgei/PocketBartender
 
 class SquareLayout : RelativeLayout {
     constructor(context: Context) : super(context) {}

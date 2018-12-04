@@ -1,4 +1,6 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.scenarios_main
+
+import com.example.pedro.drinks.entities.Drink
 
 interface MainContract {
 

@@ -1,5 +1,7 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.scenarios_main
 
+import com.example.pedro.drinks.network.RetrofitInicializer
+import com.example.pedro.drinks.entities.DrinkList
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,7 +35,7 @@ class MainPresenter(val view: MainContract.View) : MainContract.Presenter {
                     view.showRv()
                     view.showList(response.body()!!.drinks)
                 } else {
-                    view.showMessage("Sem notícias para hoje")
+                    view.showMessage("Sem bebidas")
                 }
             }
         })

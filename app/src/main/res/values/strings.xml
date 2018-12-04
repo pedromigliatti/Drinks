@@ -4,4 +4,11 @@
     <string name="aleat_rios">Aleatórios</string>
     <string name="alfab_tico">Alfabético</string>
     <string name="n_o_alco_lico">Não Alcoólico</string>
+    <string name="id">ID</string>
+    <string name="nome">NOME</string>
+    <string name="categoria">CATEGORIA</string>
+    <string name="instru_es">INSTRUÇÕES</string>
+    <string name="ingredientes">INGREDIENTES</string>
+    <string name="tipo">TIPO</string>
+    <string name="copo">COPO</string>
 </resources>

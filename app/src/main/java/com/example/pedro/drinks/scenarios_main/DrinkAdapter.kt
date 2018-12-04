@@ -1,10 +1,13 @@
-package com.example.pedro.drinks
+package com.example.pedro.drinks.scenarios_main
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.pedro.drinks.entities.Drink
+import com.example.pedro.drinks.utils.GlideApp
+import com.example.pedro.drinks.R
 import kotlinx.android.synthetic.main.drink_item.view.*
 
 
