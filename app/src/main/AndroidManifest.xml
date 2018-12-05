@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".scenarios_main.DrinkActivity"></activity>
+        <activity android:name=".scenarios_drink.DrinkActivity"></activity>
     </application>
 
 </manifest>

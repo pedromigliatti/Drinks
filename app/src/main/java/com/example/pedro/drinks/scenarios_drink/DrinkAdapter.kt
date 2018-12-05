@@ -1,4 +1,4 @@
-package com.example.pedro.drinks.scenarios_main
+package com.example.pedro.drinks.scenarios_drink
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

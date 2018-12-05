@@ -10,6 +10,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.example.pedro.drinks.R
 import com.example.pedro.drinks.entities.Drink
+import com.example.pedro.drinks.scenarios_drink.DrinkActivity
+import com.example.pedro.drinks.scenarios_drink.DrinkAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainContract.View {

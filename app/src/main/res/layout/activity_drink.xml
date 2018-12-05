@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".scenarios_main.DrinkActivity">
+    tools:context=".scenarios_drink.DrinkActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="5dp">
 
         <FrameLayout
             android:layout_width="match_parent"

@@ -12,10 +12,14 @@ interface DrinksService {
     }
 
     @GET("filter.php")
-    fun alcoholic(@Query("a") country: String = "Alcoholic"): Call<DrinkList>
+    fun alcoholic(@Query("a") q: String = "Alcoholic"): Call<DrinkList>
 
     @GET("filter.php")
-    fun nonAlcoholic(@Query("a") country: String = "Non_Alcoholic"): Call<DrinkList>
+    fun nonAlcoholic(@Query("a") q: String = "Non_Alcoholic"): Call<DrinkList>
+
+    @GET("lookup.php")
+    fun byId(@Query("i") q: String): Call<DrinkList>
+
 
     @GET("random.php")
     fun random(): Call<DrinkList>
